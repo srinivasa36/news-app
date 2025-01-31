@@ -22,12 +22,14 @@
   list-style: none;
 }
 
-.nav-links li {
+.nav-links li a {
   margin: 0 1rem;
   cursor: pointer;
   font-size: 20px;
+  text-decoration: none;
+  color: #fff;
 }
 
-.nav-links li:hover {
+.nav-links li a:hover {
   color: greenyellow;
 }

@@ -14,7 +14,7 @@ const NewsList = () => {
     setIsLoading(true);
     try {
       const response = await axios.get(
-        `https://newsapi.org/v2/everything?q=${query}&page=${page}&pageSize=10&apiKey=${process.env.REACT_APP_NEWS_API_KEY}`
+        `https://newsapi.org/v2/everything?q=${query}&page=${page}&pageSize=10&apiKey=${process.env.REACT_APP_NEWS_API_KEY_NEW}`
       );
       setArticles((prevArticles) => [
         ...prevArticles,

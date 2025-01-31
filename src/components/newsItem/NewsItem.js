@@ -12,10 +12,7 @@ const NewsItem = forwardRef(({ article }, ref) => {
       ref={ref}
     >
       <img src={article.urlToImage} alt="news-thumbnail" />
-      <h3>{article.title}</h3>
-      <p>
-        By, <strong>{article.author}</strong>
-      </p>
+      <h3>{article.description}</h3>
       {showPopup && (
         <NewsPopup article={article} onClose={() => setShowPopup(false)} />
       )}

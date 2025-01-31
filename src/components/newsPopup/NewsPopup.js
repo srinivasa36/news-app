@@ -18,7 +18,7 @@ const NewsPopup = ({ article, onClose }) => {
   }, [onClose]);
 
   return (
-    <div className="news-popup">
+    <div className="news-popup" onClick={onClose}>
       <div
         className="popup-content"
         ref={popupRef}
@@ -28,7 +28,7 @@ const NewsPopup = ({ article, onClose }) => {
           X
         </button>
         <h2>{article.title}</h2>
-        <p>{article.description}</p>
+        <p>{article.content}</p>
         <img src={article.urlToImage} alt="news-detail" />
         <a
           href={article.url}
