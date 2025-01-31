@@ -7,7 +7,7 @@ const Navbar = () => {
       <ul className="nav-links">
         <li>Home</li>
         <li>News</li>
-        <li>Showbiz</li>
+        <li>Trending</li>
       </ul>
     </nav>
   );
