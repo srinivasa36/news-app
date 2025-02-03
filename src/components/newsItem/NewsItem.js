@@ -2,12 +2,19 @@ import React, { forwardRef, useState } from "react";
 import NewsPopup from "../newsPopup/NewsPopup";
 import "./NewsItem.css";
 
-const NewsItem = forwardRef(({ article }, ref) => {
+const NewsItem = forwardRef(({ article, position }, ref) => {
+  const getPositionClass = () => {
+    if (position === "first-column") return "first-item";
+    if (position === "second-column") return "second-column";
+    return "";
+  };
   const [showPopup, setShowPopup] = useState(false);
 
   return (
     <div
-      className={`news-item ${showPopup ? "no-hover" : ""}`}
+      className={`news-item ${getPositionClass()} ${
+        showPopup ? "no-hover" : ""
+      }`}
       onClick={() => setShowPopup(true)}
       ref={ref}
     >

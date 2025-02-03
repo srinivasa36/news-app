@@ -42,3 +42,27 @@
 .news-item.no-hover img {
   transform: none;
 }
+
+.news-item.first-item {
+  grid-row: 1 / 4;
+  grid-column: 1;
+  flex-direction: column-reverse;
+  justify-content: flex-end;
+}
+
+.news-item.second-column {
+  grid-column: 2;
+  align-items: center;
+}
+
+.news-item.second-column img {
+  width: 200px;
+}
+
+.news-item.first-item img {
+  height: auto;
+}
+
+.news-item.first-item h3 {
+  padding: 0 10px;
+}

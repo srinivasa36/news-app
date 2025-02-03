@@ -2,6 +2,7 @@ import React, { useEffect, useState, useRef, useCallback } from "react";
 import axios from "axios";
 import NewsItem from "../newsItem/NewsItem";
 import "./NewsList.css";
+import TrendingNews from "../trending/TrendingNews";
 
 const NewsList = () => {
   const [articles, setArticles] = useState([]);
@@ -67,15 +68,23 @@ const NewsList = () => {
         <button type="submit">Search</button>
       </form>
       <div className="news-list">
-        {articles.map((article, index) => (
-          <NewsItem
-            key={index}
-            article={article}
-            ref={index === articles.length - 1 ? lastNewsItemRef : null}
-          />
-        ))}
-        {isLoading && <p>Loading more news...</p>}
+        {articles.slice(0, 4).map((article, index) => {
+          let position = "";
+          if (index === 0) position = "first-column";
+          else if (index > 0 && index <= 3) position = "second-column";
+
+          return (
+            <NewsItem
+              key={index}
+              article={article}
+              position={position}
+              ref={index === articles.length - 1 ? lastNewsItemRef : null}
+            />
+          );
+        })}
+        <div className="third-column-placeholder"></div>
       </div>
+      <TrendingNews noMarginTop={true} />
     </div>
   );
 };

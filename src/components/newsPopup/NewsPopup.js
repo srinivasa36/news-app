@@ -29,7 +29,11 @@ const NewsPopup = ({ article, onClose }) => {
         </button>
         <h2>{article.title}</h2>
         <p>{article.content}</p>
-        <img src={article.urlToImage} alt="news-detail" />
+        <img
+          style={{ width: "100%" }}
+          src={article.urlToImage}
+          alt="news-detail"
+        />
         <a
           href={article.url}
           target="_blank"

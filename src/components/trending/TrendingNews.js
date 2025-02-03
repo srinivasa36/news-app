@@ -3,7 +3,7 @@ import "./trendingNews.css";
 import axios from "axios";
 import NewsPopup from "../newsPopup/NewsPopup";
 
-const TrendingNews = () => {
+const TrendingNews = ({ noMarginTop }) => {
   const [articles, setArticles] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [page, setPage] = useState(1);
@@ -51,7 +51,7 @@ const TrendingNews = () => {
   }, []);
 
   return (
-    <div className="trending-section">
+    <div className={`trending-section ${noMarginTop ? "no-margin" : ""}`}>
       <h1>TRENDING</h1>
       <div className="trending-card">
         {articles.map((article, index) => (
@@ -61,7 +61,7 @@ const TrendingNews = () => {
             className="news-card"
             onClick={() => setSelectedArticle(article)}
           >
-            <h3>{index + 1}</h3>
+            <h3>{index + 1 < 10 ? `0${index + 1}` : index + 1}</h3>
             <img src={article.urlToImage} alt="news-thumbnail" />
             <p className="desc">{article.description}</p>
           </div>
